@@ -11,3 +11,15 @@ export const getPosts = async (req, res) => {
     });
   }
 };
+
+export const createPost = async (req, res) => {
+  const newPost = new Post(req.body);
+  try {
+    await newPost.save();
+  } catch (err) {
+    res.status(409).json({
+      status: "Failed",
+      message: err.message,
+    });
+  }
+};

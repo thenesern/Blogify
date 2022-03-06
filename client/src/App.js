@@ -11,11 +11,18 @@ import {
 } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 import PenIcon from "@material-ui/icons/Create";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddPostForm from "./components/AddPostForm";
+import { useDispatch } from "react-redux";
+import { getPosts } from "./actions/post";
 
 const App = () => {
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    dispatch(getPosts);
+  }, [dispatch]);
+
   const openHandler = () => {
     setOpen(true);
   };
