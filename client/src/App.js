@@ -15,12 +15,19 @@ import { useState, useEffect } from "react";
 import AddPostForm from "./components/AddPostForm";
 import { useDispatch } from "react-redux";
 import { getPosts } from "./actions/post";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import PostsList from "./components/PostsList";
 
 const App = () => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    dispatch(getPosts);
+    dispatch(getPosts());
   }, [dispatch]);
 
   const openHandler = () => {
@@ -47,34 +54,47 @@ const App = () => {
   const styles = useStyles();
   return (
     <>
-      <CssBaseline />
-      <Container maxWidth="lg">
-        <AppBar position="static" color="inherit" elevation={0}>
-          <Toolbar>
-            <IconButton
-              edge="start"
-              className={styles.container}
-              color="inherit"
-            ></IconButton>
-            <Typography variant="h6" color="secondary" className={styles.title}>
-              <a href="http://localhost:3000/posts">Blogify</a>
-            </Typography>
-            <Button
-              color="primary"
-              variant="outlined"
-              startIcon={<PenIcon />}
-              onClick={openHandler}
-            >
-              Yeni Yazı
-            </Button>
-          </Toolbar>
-        </AppBar>
+      <Router>
+        <CssBaseline />
+        <Container maxWidth="lg">
+          <AppBar position="static" color="inherit" elevation={0}>
+            <Toolbar>
+              <IconButton
+                edge="start"
+                className={styles.container}
+                color="inherit"
+              ></IconButton>
+              <Typography
+                variant="h6"
+                color="secondary"
+                className={styles.title}
+              >
+                <a href="http://localhost:3000/posts">Blogify</a>
+              </Typography>
+              <Button
+                color="primary"
+                variant="outlined"
+                startIcon={<PenIcon />}
+                onClick={openHandler}
+              >
+                Yeni Yazı
+              </Button>
+            </Toolbar>
+          </AppBar>
 
-        <Grid container className={styles.container}>
-          <Grid item xs={12}></Grid>
-        </Grid>
-      </Container>
-      <AddPostForm open={open} closeHandler={closeHandler} />
+          <Grid container className={styles.container}>
+            <Grid item xs={12}>
+              <Routes>
+                <Route exact path="/posts" element={<PostsList />} />
+                <Route path="/" element={<Navigate replace to="/posts" />} />
+              </Routes>
+              {/*  <Navigate from="/" to="/posts" /> */}
+            </Grid>
+          </Grid>
+          <PostsList />
+        </Container>
+        <AddPostForm open={open} closeHandler={closeHandler} />
+      </Router>
     </>
   );
 };
