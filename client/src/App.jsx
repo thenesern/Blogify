@@ -70,9 +70,7 @@ const App = () => {
                 color="secondary"
                 className={styles.title}
               >
-                <a href="https://blogify-app-eneseren.herokuapp.com/posts">
-                  Blogify
-                </a>
+                <a href="https://blogify-eneseren.herokuapp.com/">Blogify</a>
               </Typography>
               <Button
                 color="primary"
