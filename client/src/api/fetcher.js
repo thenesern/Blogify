@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiEndpoint = "https://blogify-app-eneseren.herokuapp.com/posts/";
+const apiEndpoint = "https://blogify-backend-eneseren.herokuapp.com/posts";
 
 export const getPosts = async () => await axios.get(apiEndpoint);
 
