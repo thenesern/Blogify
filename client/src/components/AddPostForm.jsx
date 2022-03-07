@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { yupResolver } from "@hookform/resolvers/dist/ie11/yup";
 import FileBase64 from "react-file-base64";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const tags = ["fun", "programming", "health", "science"];
-const postSchema = yup.object().shape({
+const postSchema = new yup.ObjectSchema().shape({
   title: yup.string().required(),
   subtitle: yup.string().required(),
   content: yup.string().min(20).required(),
