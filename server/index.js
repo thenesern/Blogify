@@ -17,16 +17,14 @@ app.get("/", (req, res) => {
 });
 app.use("/posts", postRoutes);
 
-const PORT = process.env.PORT || 5000;
-
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
+    app.listen(process.env.PORT, () => {
+      console.log(`Server is running on port ${process.env.DATABASE}`);
     });
   })
   .catch((err) => console.log(err.message));
