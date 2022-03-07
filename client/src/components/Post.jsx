@@ -35,9 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Post = ({ _id, title, subtitle, content, tag, image, createdAt }) => {
   const styles = useStyles();
-  const convertRelativeTime = (date) => {
-    return moment(date).fromNow();
-  };
+
   return (
     <Card className={styles.root}>
       <CardMedia className={styles.media} image={image} title="Paella dish" />

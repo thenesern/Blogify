@@ -48,7 +48,7 @@ const PostDetails = ({ match, history, location }) => {
 
   useEffect(() => {
     dispatch(getPostDetails(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
   const styles = useStyles();
 
   const removePost = () => {
