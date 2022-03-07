@@ -34,7 +34,7 @@ const App = () => {
   const openHandler = () => {
     setOpen(true);
   };
-  const closeHandler = () => {
+  const handleClose = () => {
     setOpen(false);
   };
   const useStyles = makeStyles((theme) => ({
@@ -98,7 +98,7 @@ const App = () => {
             </Grid>
           </Grid>
         </Container>
-        <AddPostForm open={open} closeHandler={closeHandler} />
+        <AddPostForm open={open} handleClose={handleClose} />
       </Router>
     </>
   );

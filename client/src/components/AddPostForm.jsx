@@ -36,7 +36,7 @@ const postSchema = yup.object().shape({
   tag: yup.mixed().oneOf(tags),
 });
 
-const AddPostForm = ({ open, closeHandler }) => {
+const AddPostForm = ({ open, handleClose }) => {
   const dispatch = useDispatch();
   const [file, setFile] = useState(null);
   const { register, handleSubmit, control, errors, reset } = useForm({
@@ -52,10 +52,10 @@ const AddPostForm = ({ open, closeHandler }) => {
   const clearForm = () => {
     reset();
     setFile(null);
-    closeHandler();
+    handleClose();
   };
   return (
-    <Dialog open={open} onClose={closeHandler}>
+    <Dialog open={open} onClose={handleSubmit}>
       <DialogTitle>Create a new Post</DialogTitle>
       <DialogContent>
         <DialogContentText>Form</DialogContentText>
