@@ -22,6 +22,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import PostsList from "./components/PostsList";
+import PostDetails from "./components/PostDetails";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -86,12 +87,16 @@ const App = () => {
             <Grid item xs={12}>
               <Routes>
                 <Route exact path="/posts" element={<PostsList />} />
-                <Route path="/" element={<Navigate replace to="/posts" />} />
+                <Route exact path="/posts/:id" element={<PostDetails />} />
+                <Route
+                  path="/"
+                  element={
+                    <Navigate replace to="/posts" element={<PostsList />} />
+                  }
+                />
               </Routes>
-              {/*  <Navigate from="/" to="/posts" /> */}
             </Grid>
           </Grid>
-          <PostsList />
         </Container>
         <AddPostForm open={open} closeHandler={closeHandler} />
       </Router>

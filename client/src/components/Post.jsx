@@ -1,4 +1,3 @@
-import React from "react";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
@@ -40,7 +39,7 @@ const Post = ({ _id, title, subtitle, content, tag, image, createdAt }) => {
     return moment(date).fromNow();
   };
   return (
-    <Card classname={styles.root}>
+    <Card className={styles.root}>
       <CardMedia className={styles.media} image={image} title="Photo" />
       <div className={styles.overlay}>
         <Typography variant="h6">Deneme</Typography>
