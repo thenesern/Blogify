@@ -56,14 +56,14 @@ const AddPostForm = ({ open, closeHandler }) => {
   };
   return (
     <Dialog open={open} onClose={closeHandler}>
-      <DialogTitle>Yeni Yazı Oluştur</DialogTitle>
+      <DialogTitle>Create a new Post</DialogTitle>
       <DialogContent>
-        <DialogContentText>Yeni Yazı Formu</DialogContentText>
+        <DialogContentText>Form</DialogContentText>
         <div className={styles.root}>
           <form noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
             <TextField
               id="title"
-              label="Başlık"
+              label="Title"
               name="title"
               variant="outlined"
               className={styles.textField}
@@ -74,7 +74,7 @@ const AddPostForm = ({ open, closeHandler }) => {
             />
             <TextField
               id="subtitle"
-              label="Alt Başlık"
+              label="Subtitle"
               name="subtitle"
               variant="outlined"
               className={styles.textField}
@@ -105,7 +105,7 @@ const AddPostForm = ({ open, closeHandler }) => {
 
             <TextField
               id="content"
-              label="İçerik"
+              label="Content"
               name="content"
               multilinerows={4}
               variant="outlined"
@@ -124,7 +124,7 @@ const AddPostForm = ({ open, closeHandler }) => {
       </DialogContent>
       <DialogActions>
         <Button color="inherit" onClick={clearForm}>
-          Vazgeç
+          Discard
         </Button>
         <Button
           type="submit"
@@ -132,7 +132,7 @@ const AddPostForm = ({ open, closeHandler }) => {
           color="primary"
           onClick={() => handleSubmit(onSubmit)()}
         >
-          Gönder
+          Submit
         </Button>
       </DialogActions>
     </Dialog>

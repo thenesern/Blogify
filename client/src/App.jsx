@@ -78,7 +78,7 @@ const App = () => {
                 startIcon={<PenIcon />}
                 onClick={openHandler}
               >
-                Yeni Yazı
+                New Post
               </Button>
             </Toolbar>
           </AppBar>

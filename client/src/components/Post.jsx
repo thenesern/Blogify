@@ -40,28 +40,23 @@ const Post = ({ _id, title, subtitle, content, tag, image, createdAt }) => {
   };
   return (
     <Card className={styles.root}>
-      <CardMedia className={styles.media} image={image} title="Photo" />
-      <div className={styles.overlay}>
-        <Typography variant="h6">Deneme</Typography>
-        <Typography variant="body2">
-          {convertRelativeTime(createdAt)}
-        </Typography>
-      </div>
+      <CardMedia className={styles.media} image={image} title="Paella dish" />
+      <div className={styles.overlay}></div>
       <CardContent>
         <Typography variant="h6" component="p" gutterBottom>
           {title}
-        </Typography>
+        </Typography>{" "}
         <Typography variant="overline" component="p" gutterBottom>
           {subtitle}
-        </Typography>
-        <Typography variant="body2" component="p" gutterBottom>
-          {content.substring(0, 250) + "..."}
+        </Typography>{" "}
+        <Typography variant="body2" component="p">
+          {content?.substring(0, 250) + "..."}
         </Typography>
         <Chip label={`# ${tag}`} variant="outlined" className={styles.chip} />
       </CardContent>
       <CardActions>
         <Button size="small" color="primary">
-          <Link to={`/posts/${_id}`}>More..</Link>
+          <Link to={`/posts/${_id}`}>More...</Link>
         </Button>
       </CardActions>
     </Card>
