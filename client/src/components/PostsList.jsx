@@ -27,11 +27,6 @@ const PostsList = () => {
           onClick={() => setLayout("gridThree")}
         >
           3
-          {/*  <img
-            src={gridThree}
-            style={{ background: layout === "gridThree" ? "#ccc" : "" }}
-            alt="Three Columns Grid Icon"
-          /> */}
         </Button>
         <Button
           variant="text"
@@ -39,11 +34,6 @@ const PostsList = () => {
           onClick={() => setLayout("gridFour")}
         >
           4
-          {/*   <img
-            src={gridFour}
-            style={{ background: layout === "gridFour" ? "#ccc" : "" }}
-            alt="Four Columns Grid Icon"
-          /> */}
         </Button>
       </div>
       <Grid container spacing={2} alignContent="stretch">

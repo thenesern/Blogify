@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
   },
   image: {
-    width: "100%",
+    width: "50%",
     borderRadius: 5,
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(4),
@@ -83,6 +83,7 @@ const PostDetails = ({ match, history, location }) => {
                   color="secondary"
                   variant="outlined"
                   startIcon={<DeleteIcon />}
+                  style={{ marginLeft: "1rem" }}
                 >
                   Delete
                 </Button>
@@ -96,7 +97,7 @@ const PostDetails = ({ match, history, location }) => {
           <Typography variant="caption" component="p">
             {convertRelativeTime(currentPost?.createdAt)}
           </Typography>
-          <Chip label={`# ${currentPost?.tag}`} />
+          <Chip label={`# ${currentPost?.tag}`} style={{ marginTop: "1rem" }} />
           <div className={styles.content}>
             <img src={currentPost?.image} alt="" className={styles.image}></img>
             <Typography variant="body1">{currentPost?.content}</Typography>

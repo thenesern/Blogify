@@ -12,8 +12,9 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 374,
-    posiiton: "relative",
+    maxWidth: 400,
+    position: "relative",
+    minHeight: 550,
   },
   media: {
     height: 0,
@@ -51,9 +52,20 @@ const Post = ({ _id, title, subtitle, content, tag, image, createdAt }) => {
         </Typography>
         <Chip label={`# ${tag}`} variant="outlined" className={styles.chip} />
       </CardContent>
-      <CardActions>
+      <CardActions
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+        }}
+      >
         <Button size="small" color="primary">
-          <Link to={`/posts/${_id}`}>More...</Link>
+          <Link to={`/posts/${_id}`} style={{ textDecoration: "none" }}>
+            More...
+          </Link>
         </Button>
       </CardActions>
     </Card>

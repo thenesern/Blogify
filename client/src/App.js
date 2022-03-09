@@ -48,7 +48,7 @@ const App = () => {
       flexGrow: 1,
     },
     container: {
-      marginTop: theme.spacing(3),
+      marginTop: theme.spacing(2),
     },
   }));
 
@@ -57,8 +57,8 @@ const App = () => {
     <>
       <Router>
         <CssBaseline />
-        <Container maxWidth="lg">
-          <AppBar position="static" color="inherit" elevation={0}>
+        <Container maxWidth="xl">
+          <AppBar position="static" color="inherit" elevation={1}>
             <Toolbar>
               <IconButton
                 edge="start"
@@ -70,7 +70,12 @@ const App = () => {
                 color="secondary"
                 className={styles.title}
               >
-                <a href="https://blogify-eneseren.herokuapp.com/">Blogify</a>
+                <a
+                  href="https://blogify-eneseren.herokuapp.com/"
+                  style={{ textDecoration: "none", fontSize: "2rem" }}
+                >
+                  Blogify
+                </a>
               </Typography>
               <Button
                 color="primary"
@@ -82,7 +87,6 @@ const App = () => {
               </Button>
             </Toolbar>
           </AppBar>
-
           <Grid container className={styles.container}>
             <Grid item xs={12}>
               <Routes>
