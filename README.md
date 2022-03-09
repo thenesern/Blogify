@@ -2,6 +2,7 @@
 <img align="center" src="https://raw.githubusercontent.com/thenesern/Blogify/master/Blogify.png"/>
 
 
+<p>Live: <a href="https://blogify-eneseren.herokuapp.com/">Blogify</a></p>
 <p>This is my very first "Full Stack" project.
 <p>Through this project, I've understand the;</p>
 
